@@ -1,0 +1,10 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"buildCommand": "bun run nuxt:build && bun run drizzle:migrate",
+	"crons": [
+		{
+			"path": "/api/cron",
+			"schedule": "0 0 * * *"
+		}
+	]
+}

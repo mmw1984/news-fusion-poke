@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"resolveJsonModule": true,
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
+		"target": "ESNext",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true
+	},
+	"include": ["**/*.ts", ".nuxt/schema/nuxt.schema.d.ts", ".nuxt/nuxt.d.ts"],
+	"exclude": ["node_modules", "dist", ".output", ".vercel", "web"]
+}
