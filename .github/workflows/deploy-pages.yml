@@ -33,13 +33,10 @@ jobs:
 
       - name: Set base URL for Pages
         run: |
-          if [[ "${{ github.repository }}" == *".github.io" ]]; then
-            echo "NUXT_APP_BASE_URL=/" >> "$GITHUB_ENV"
-            echo "NUXT_PUBLIC_SITE_URL=https://${{ github.repository }}" >> "$GITHUB_ENV"
-          else
-            echo "NUXT_APP_BASE_URL=/${{ github.event.repository.name }}/" >> "$GITHUB_ENV"
-            echo "NUXT_PUBLIC_SITE_URL=https://${{ github.repository_owner }}.github.io" >> "$GITHUB_ENV"
-          fi
+          # Force root base when using a custom domain or Pages at root.
+          echo "NUXT_APP_BASE_URL=/" >> "$GITHUB_ENV"
+          # Set public site URL to custom domain if present; replace with your domain
+          echo "NUXT_PUBLIC_SITE_URL=https://news.mmw1984.com" >> "$GITHUB_ENV"
 
       - name: Generate static site
         run: npm run nuxt:generate
