@@ -11,26 +11,42 @@ const renderedContent = computed(() => renderMarkdown(props.entry.content));
 
 <style scoped>
 .article-content :deep(img) {
-  @apply my-3 rounded max-w-full;
+  margin: 0.75rem 0;
+  border-radius: 0.25rem;
+  max-width: 100%;
 }
 
 .article-content :deep(a) {
-  @apply underline text-blue-500 dark:text-blue-400;
+  text-decoration: underline;
+  color: #3b82f6; /* blue-500 */
+}
+.dark .article-content :deep(a) {
+  color: #60a5fa; /* blue-400 */
 }
 
 .article-content :deep(p) {
-  @apply mb-3 leading-relaxed;
+  margin-bottom: 0.75rem;
+  line-height: 1.625; /* approx. leading-relaxed */
 }
 
 .article-content :deep(h1),
 .article-content :deep(h2),
 .article-content :deep(h3) {
-  @apply mt-4 mb-2 font-semibold text-zinc-800 dark:text-zinc-200;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #27272a; /* zinc-800 */
+}
+.dark .article-content :deep(h1),
+.dark .article-content :deep(h2),
+.dark .article-content :deep(h3) {
+  color: #e6e6e6; /* zinc-200 */
 }
 
 .article-content :deep(ul),
 .article-content :deep(ol) {
-  @apply pl-5 mb-3;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 </style>
 
